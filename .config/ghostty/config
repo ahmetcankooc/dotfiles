@@ -1,0 +1,9 @@
+# Font Settings
+font-family = "JetBrainsMono NF"
+font-size = 12
+font-thicken = true
+theme = Monokai-Pro-Spectrum
+keybind = ctrl+c=copy_to_clipboard
+keybind = ctrl+v=paste_from_clipboard
+window-width = 105
+window-height = 30
