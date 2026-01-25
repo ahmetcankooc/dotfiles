@@ -1,0 +1,206 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+palette = "monokai_mnml"
+
+format = """
+$os\
+$username\
+$directory\
+$git_branch\
+$git_status\
+$fill\
+$c$cpp$rust$golang$nodejs$php$java$kotlin$haskell$python\
+$docker_context\
+$conda\
+$time\
+$battery\
+$line_break\
+$character"""
+
+[fill]
+symbol = " "
+style = "bold gray"
+
+[line_break]
+disabled = false
+
+[character]
+success_symbol = "[❯](purple)"
+error_symbol = "[❯](red)"
+vimcmd_symbol = "[❮](green)"
+
+[os]
+disabled = false
+style = "fg:color_green"
+
+[username]
+show_always = true
+format = "[$user]($style)"
+style_user = "fg:color_red"
+style_root = "fg:color_red"
+
+[directory]
+format = "[ $path ]($style)"
+style = "fg:color_yellow"
+truncation_length = 3
+truncation_symbol = "…/"
+read_only = " 󰌾"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+
+[git_branch]
+symbol = ""
+style = "bg:color_aqua"
+format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
+
+[git_status]
+style = "bg:color_aqua"
+format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
+
+[time]
+disabled = false
+format = "[ $time]($style)"
+time_format = "%R"
+utc_time_offset = "local"
+style = "italic dimmed white"
+
+[battery]
+format = "[ $percentage $symbol]($style)"
+full_symbol = "█"
+charging_symbol = "[↑](italic bold green)"
+discharging_symbol = "↓"
+unknown_symbol = "░"
+empty_symbol = "▃"
+
+[[battery.display]]
+threshold = 20
+style = "italic bold"
+
+[[battery.display]]
+threshold = 60
+style = "italic dimmed"
+
+[[battery.display]]
+threshold = 70
+style = "italic dimmed"
+
+[palettes.monokai_mnml]
+color_red = '#FC618D'
+color_orange = '#FD9353'
+color_yellow = '#FCE566'
+color_green = '#7BD88F'
+color_blue = '#5AD4E6'
+color_purple = '#948AE3'
+
+[palettes.monokai_spectrum]
+color_red = '#FC618D'
+color_orange = '#FD9353'
+color_yellow = '#FCE566'
+color_green = '#7BD88F'
+color_blue = '#5AD4E6'
+color_purple = '#948AE3'
+color_fg0 = '#F7F1FF'
+color_bg1 = '#222222'
+color_bg3 = '#535155'
+
+[palettes.gruvbox_dark]
+color_fg0 = '#fbf1c7'
+color_bg1 = '#3c3836'
+color_bg3 = '#665c54'
+color_blue = '#458588'
+color_aqua = '#689d6a'
+color_green = '#98971a'
+color_orange = '#d65d0e'
+color_purple = '#b16286'
+color_red = '#cc241d'
+color_yellow = '#d79921'
+
+[os.symbols]
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+CachyOS = " "
+CentOS = " "
+Debian = " "
+Fedora = " "
+Kali = " "
+Linux = " "
+NixOS = " "
+Redhat = " "
+RedHatEnterprise = " "
+Ubuntu = " "
+Windows = "󰍲 "
+
+[aws]
+symbol = " "
+
+[c]
+symbol = " "
+
+[cpp]
+symbol = " "
+
+[cmake]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[fortran]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[gcloud]
+symbol = " "
+
+[git_commit]
+tag_symbol = '  '
+
+[hostname]
+ssh_symbol = " "
+
+[lua]
+symbol = " "
+
+[memory_usage]
+symbol = "󰍛 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = "󰏗 "
+
+[perl]
+symbol = " "
+
+[python]
+symbol = " "
+
+[rlang]
+symbol = "󰟔 "
+
+[rust]
+symbol = "󱘗 "
+
+[status]
+symbol = " "
+
+[zig]
+symbol = " "
