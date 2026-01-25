@@ -48,16 +48,16 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 if command -v eza >/dev/null 2>&1; then 
-alias ls='eza -l --color=always --group-directories-first --icons' # preferred listing
-alias la='eza -la --color=always --group-directories-first --icons'  # all files and dirs
-alias ll='eza -l --color=always --group-directories-first --icons'  # long format
-alias lt='eza -aT --color=always --group-directories-first --icons' # tree listing
+alias ls='eza -l --color=always --group-directories-first --icons'
+alias la='eza -la --color=always --group-directories-first --icons'
+alias ll='eza -l --color=always --group-directories-first --icons'
+alias lt='eza -aT --color=always --group-directories-first --icons'
 alias l.="eza -a | grep -e '^\.'"
 else
     alias ls='ls --color=auto'
     alias ll='ls -la --color=auto'
 fi
-
+#
 alias vim='nvim'
 alias c='clear'
 alias tarnow='tar -acf '
@@ -85,6 +85,7 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias camoff="echo '1-4' | sudo tee /sys/bus/usb/drivers/usb/unbind"
 alias camon="echo '1-4' | sudo tee /sys/bus/usb/drivers/usb/bind"
 alias grubupdate="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
