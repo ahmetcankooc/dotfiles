@@ -16,7 +16,6 @@ zinit light Aloxaf/fzf-tab
 
 # Load completions
 autoload -Uz compinit && compinit
-
 zinit cdreplay -q
 
 #Keybindings
@@ -48,11 +47,11 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 if command -v eza >/dev/null 2>&1; then 
-alias ls='eza -l --color=always --group-directories-first --icons'
-alias la='eza -la --color=always --group-directories-first --icons'
-alias ll='eza -l --color=always --group-directories-first --icons'
-alias lt='eza -aT --color=always --group-directories-first --icons'
-alias l.="eza -a | grep -e '^\.'"
+    alias ls='eza -l --color=always --group-directories-first --icons=always $@ --git'
+    alias la='eza -la --color=always --group-directories-first --icons=always $@ --git'
+    alias ll='eza -l --color=always --group-directories-first --icons=always $@ --git'
+    alias lt='eza -aT --color=always --group-directories-first --icons=always $@ --git'
+    alias l.="eza -a | grep -e '^\.'"
 else
     alias ls='ls --color=auto'
     alias ll='ls -la --color=auto'
@@ -85,8 +84,22 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias camoff="echo '1-4' | sudo tee /sys/bus/usb/drivers/usb/unbind"
 alias camon="echo '1-4' | sudo tee /sys/bus/usb/drivers/usb/bind"
 alias grubupdate="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias ituvpn="sudo gpclient --ignore-tls-errors connect pvitu.itu.edu.tr"
+alias wrfdckr="docker exec -u wrfuser -it wrf /bin/bash"
 
 # Shell integrations
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(starship init zsh)"
+
+conda() {
+    unset -f conda
+    source "$HOME/miniconda3/etc/profile.d/conda.sh"
+    conda "$@"
+}
+
+export CUDA_PATH=/opt/cuda
+export LD_LIBRARY_PATH=$CUDA_PATH/lib64:$LD_LIBRARY_PATH
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
