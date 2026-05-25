@@ -7,6 +7,7 @@ $username\
 $directory\
 $git_branch\
 $git_status\
+$git_commit\
 $fill\
 $c$cpp$rust$golang$nodejs$php$java$kotlin$haskell$python\
 $docker_context\
@@ -150,6 +151,8 @@ symbol = " "
 
 [conda]
 symbol = " "
+style = "bold green"
+ignore_base = false
 
 [docker_context]
 symbol = " "
